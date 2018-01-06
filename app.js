@@ -11,3 +11,14 @@ deleteElements.forEach((node) => {
   })
 })
 
+const bookAroma = document.querySelector('#page-banner .title');
+bookAroma.innerHTML += '<a href="https://www.google.com"> google </a>'
+
+const aTag = document.querySelector('a');
+console.log('aTag: ', aTag);
+
+aTag.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('e.target.href: ', e.target.href);
+})
+
