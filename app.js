@@ -1,8 +1,13 @@
-const bookList = document.querySelector('#book-list')
+const bookList = document.querySelector('#book-list');
 
-const header = bookList.previousElementSibling;
-console.log('header: ', header);
-const form = bookList.nextElementSibling;
-console.log('form: ', form);
+const deleteElements = bookList.querySelectorAll('li .delete');
+console.log('deleteElements: ', deleteElements);
 
-bookList.previousElementSibling.querySelector('p').innerHTML += '<br/> yeah ~'
+deleteElements.forEach((node) => {
+  
+  node.addEventListener('click', (e) => {
+    const li = e.target.parentNode;
+    li.parentNode.removeChild(li);
+  })
+})
+
