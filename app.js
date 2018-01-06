@@ -1,9 +1,8 @@
 const bookList = document.querySelector('#book-list')
-console.log('bookList: ', bookList);
 
-bookList.parentElement
-console.log('bookList.parentElement: ', bookList.parentElement.parentNode);
-console.log('bookList.parentNode: ', bookList.parentNode.parentElement);
+const header = bookList.previousElementSibling;
+console.log('header: ', header);
+const form = bookList.nextElementSibling;
+console.log('form: ', form);
 
-console.log('bookList.childNodes: ', bookList.childNodes);
-console.log('bookList.children: ', bookList.children);
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br/> yeah ~'
