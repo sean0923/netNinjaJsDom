@@ -1,33 +1,14 @@
-// let titles = document.getElementsByClassName('title');
+const banner = document.querySelector('#page-banner');
+console.log('banner: ', banner);
 
-// [...titles].forEach((title) => {
-//   console.log('title: ', title);
-// })
+banner.nodeName
+banner.nodeType
+console.log('banner.nodeType: ', banner.nodeType);
+console.log('banner.nodeName: ', banner.nodeName);
 
-// let wiseMan = document.querySelector('#book-list li:nth-child(2) .name')
-// console.log('wiseMan: ', wiseMan);
+console.log('banner.hasChildNodes(): ', banner.hasChildNodes());
 
-// let allNames = document.querySelectorAll('#book-list .name')
-// console.log('allNames: ', allNames);
-
-// [...allNames].forEach((name) => {
-//   console.log('name: ', name);
-// });
-
-// console.log('allNames: ', Array.isArray(allNames));
-// console.log('allNames: ', allNames);
-// let getByClassName = document.getElementsByClassName('name');
-// console.log('getByClassName: ', getByClassName);
-
-let allNames = document.querySelectorAll('#book-list li .name');
-console.log('allNames: ', allNames);
-
-allNames.forEach((name) => {
-  name.textContent +=' (yeah)'
-})
-
-let bookListId = document.querySelector('#book-list');
-console.log('bookListId: ', bookListId);
-
-bookListId.innerHTML += '<h2> yeah </h2>'
-
+let cloneBanner = banner.cloneNode();
+console.log('cloneBanner: ', cloneBanner);
+cloneBanner = banner.cloneNode(true);
+console.log('cloneBanner: ', cloneBanner);
