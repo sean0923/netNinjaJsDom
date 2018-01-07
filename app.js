@@ -1,15 +1,13 @@
-const bookList = document.querySelector('#book-list');
+const forms = document.forms
+console.log('forms: ', forms);
+const addBook = forms['add-book'];
+console.log('addBook: ', addBook);
 
-const unorderedList = bookList.querySelector('ul');
-
-
-unorderedList.addEventListener('click', (e) => {
-console.log('e.target.className: ', e.target.className);
-  if (e.target.className = 'delete') {
-    const li = e.target.parentElement;
-    unorderedList.removeChild(li);
-  }
+addBook.addEventListener('submit', (e) => {
+  e.preventDefault();
+  e.target.value
+  // const input = e.target.querySelector('input[type="text"]').value;
+  const input = e.target.querySelector('input').value;
 })
-
 
 
