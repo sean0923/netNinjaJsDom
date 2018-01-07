@@ -1,24 +1,15 @@
 const bookList = document.querySelector('#book-list');
 
-const deleteElements = bookList.querySelectorAll('li .delete');
-console.log('deleteElements: ', deleteElements);
+const unorderedList = bookList.querySelector('ul');
 
-deleteElements.forEach((node) => {
-  
-  node.addEventListener('click', (e) => {
-    const li = e.target.parentNode;
-    li.parentNode.removeChild(li);
-  })
+
+unorderedList.addEventListener('click', (e) => {
+console.log('e.target.className: ', e.target.className);
+  if (e.target.className = 'delete') {
+    const li = e.target.parentElement;
+    unorderedList.removeChild(li);
+  }
 })
 
-const bookAroma = document.querySelector('#page-banner .title');
-bookAroma.innerHTML += '<a href="https://www.google.com"> google </a>'
 
-const aTag = document.querySelector('a');
-console.log('aTag: ', aTag);
-
-aTag.addEventListener('click', (e) => {
-  e.preventDefault();
-  console.log('e.target.href: ', e.target.href);
-})
 
