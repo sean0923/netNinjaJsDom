@@ -4,28 +4,39 @@ const addBook = forms['add-book'];
 const bookList = document.querySelector('#book-list');
 const ul = bookList.querySelector('ul');
 
+// remove list
 ul.addEventListener('click', (e) => {
   if (e.target.className === 'delete') {
     const li = e.target.parentElement;
-    // ul.remove();
     li.remove();
     console.log('e.target: ', e.target);
   }
 })
 
+// add book list
 addBook.addEventListener('submit', e => {
-	e.preventDefault();
-	e.target.value;
-	// const input = e.target.querySelector('input[type="text"]').value;
-	const input = e.target.querySelector('input').value;
+  // prevent default refreshing
+  e.preventDefault();
 
-	ul.innerHTML += `<li>
-    <span class="name"></span>
-    <span class="delete">delete</span>
-  </li>
-  `;
-  const lastEleChildSpan = ul.lastElementChild.querySelector('span');
-  lastEleChildSpan.textContent = input;
-  e.target.querySelector('input').value = ''
-    
+  // getInputValue
+  const inputField = e.target.querySelector('input[type="text"')
+  const inputValue = inputField.value;
+
+  // create li span span tag
+  const li = document.createElement('li');
+  const nameSpan = document.createElement('span');
+  nameSpan.classList.add('name');
+  nameSpan.textContent = inputValue;
+  const deleteSpan = document.createElement('span');
+  deleteSpan.textContent = 'delete';
+  deleteSpan.classList.add('delete');
+
+  li.appendChild(nameSpan);
+  li.appendChild(deleteSpan);
+
+  ul.appendChild(li);
+
+  // clear input field
+  inputField.value = '';
+
 });
